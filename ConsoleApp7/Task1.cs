@@ -8,25 +8,24 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7
 {
-    internal class Program
+    internal class Task1
     {
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>() { 2, 7, 11, 15 };
+            List<int> numbers = new List<int>() { 5, 5, 7, 2 };
             List<int> indices = new List<int>();
             var target = 9;
             for (int i = 0; i < numbers.Count; i++) 
             {
                 var number = numbers[i];
-                foreach (int j in numbers)
+                for (int j  = 0; j < numbers.Count; j++)
                 {
-                    if (number + j == target)
+                    var number2 = numbers[j];
+                    if (number + number2 == target)
                     {
-                        indices.Add(numbers.IndexOf(number));
-                        indices.Add(numbers.IndexOf(j));
+                        indices.Add(i);
+                        indices.Add(j);
                     }
-                        
-
                 }
                 if (indices.Count == 2)
                 {
